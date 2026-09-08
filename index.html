@@ -1,0 +1,846 @@
+```html
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Fidelis Accounting & Tax Service</title>
+
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f6f8;
+      color: #172b46;
+    }
+
+    /* HEADER */
+
+    header {
+      background: #172b46;
+      padding: 18px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      color: white;
+      font-size: 21px;
+      font-weight: bold;
+    }
+
+    .logo span {
+      color: #dc2c34;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 15px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #dc2c34;
+    }
+
+
+    /* HERO */
+
+    .hero {
+      min-height: 520px;
+      background:
+        linear-gradient(
+          135deg,
+          #172b46,
+          #0c1b2f
+        );
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      padding: 70px 20px;
+    }
+
+    .hero-content {
+      max-width: 900px;
+    }
+
+    .hero h1 {
+      font-size: clamp(45px, 7vw, 75px);
+      line-height: 1.1;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+      color: #dc2c34;
+    }
+
+    .hero p {
+      font-size: 21px;
+      color: #d9dfe7;
+      margin-bottom: 35px;
+    }
+
+    .hero-btn {
+      display: inline-block;
+      background: #dc2c34;
+      color: white;
+      text-decoration: none;
+      padding: 17px 32px;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: bold;
+      transition: 0.3s;
+      box-shadow: 0 10px 25px rgba(220, 44, 52, 0.3);
+    }
+
+    .hero-btn:hover {
+      transform: translateY(-3px);
+      background: #c71f27;
+    }
+
+
+    /* SERVICES */
+
+    .services {
+      padding: 65px 8%;
+      text-align: center;
+    }
+
+    .section-title {
+      font-size: 42px;
+      margin-bottom: 40px;
+      color: #172b46;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    .service-card {
+      background: white;
+      padding: 30px 20px;
+      border-radius: 14px;
+      border-top: 5px solid #dc2c34;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+      transition: 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-7px);
+    }
+
+    .service-icon {
+      font-size: 36px;
+      margin-bottom: 15px;
+    }
+
+    .service-card h3 {
+      color: #172b46;
+      font-size: 19px;
+      margin-bottom: 8px;
+    }
+
+    .service-card p {
+      color: #697586;
+      font-size: 15px;
+    }
+
+
+    /* CONTACT */
+
+    .contact {
+      background: #172b46;
+      padding: 70px 8%;
+      text-align: center;
+      color: white;
+    }
+
+    .contact h2 {
+      font-size: 42px;
+      margin-bottom: 12px;
+    }
+
+    .contact-intro {
+      color: #d6dde6;
+      margin-bottom: 40px;
+      font-size: 17px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 25px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .contact-card {
+      background: white;
+      color: #172b46;
+      padding: 28px 20px;
+      border-radius: 14px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .contact-card h3 {
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    .contact-card p {
+      color: #697586;
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+
+
+    /* CLICKABLE PHONE NUMBER */
+
+    .phone-number {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: #172b46;
+      text-decoration: none;
+      font-size: 17px;
+      font-weight: bold;
+      padding: 8px 12px;
+      border-radius: 7px;
+      transition: 0.3s;
+    }
+
+    .phone-number:hover {
+      color: #dc2c34;
+      background: #f4f6f8;
+    }
+
+
+    /* WHATSAPP ICON */
+
+    .whatsapp-area {
+      margin: 35px auto 0;
+      text-align: center;
+    }
+
+    .whatsapp-button {
+      width: 62px;
+      height: 62px;
+      border: none;
+      border-radius: 50%;
+      background: #25d366;
+      color: white;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.22);
+      transition: 0.3s;
+    }
+
+    .whatsapp-button:hover {
+      transform: translateY(-4px);
+      background: #1ebe5d;
+    }
+
+    .whatsapp-button svg {
+      width: 31px;
+      height: 31px;
+      fill: white;
+    }
+
+    .whatsapp-label {
+      margin-top: 10px;
+      color: #d6dde6;
+      font-size: 14px;
+    }
+
+
+    /* WHATSAPP MODAL */
+
+    .whatsapp-modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      inset: 0;
+      background: rgba(12, 27, 47, 0.75);
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .whatsapp-modal.active {
+      display: flex;
+    }
+
+    .whatsapp-modal-content {
+      width: 100%;
+      max-width: 380px;
+      background: white;
+      border-radius: 16px;
+      padding: 30px 25px;
+      text-align: center;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+      position: relative;
+    }
+
+    .whatsapp-modal-content h3 {
+      color: #172b46;
+      font-size: 23px;
+      margin-bottom: 8px;
+    }
+
+    .whatsapp-modal-content p {
+      color: #697586;
+      font-size: 15px;
+      margin-bottom: 25px;
+    }
+
+    .whatsapp-choice {
+      display: block;
+      width: 100%;
+      background: #25d366;
+      color: white;
+      text-decoration: none;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 10px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .whatsapp-choice:hover {
+      background: #1ebe5d;
+    }
+
+    .close-modal {
+      position: absolute;
+      top: 12px;
+      right: 15px;
+      border: none;
+      background: transparent;
+      color: #697586;
+      font-size: 25px;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    .close-modal:hover {
+      color: #dc2c34;
+    }
+
+
+    /* BUSINESS DETAILS */
+
+    .business-details {
+      max-width: 900px;
+      margin: 35px auto 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 15px;
+    }
+
+    .business-detail {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 18px;
+      border-radius: 10px;
+      color: white;
+    }
+
+    .business-detail a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .business-detail a:hover {
+      text-decoration: underline;
+    }
+
+
+    /* WEBSITE BUTTON */
+
+    .website-button {
+      display: inline-block;
+      margin-top: 30px;
+      background: white;
+      color: #172b46;
+      text-decoration: none;
+      padding: 15px 28px;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .website-button:hover {
+      transform: translateY(-3px);
+    }
+
+
+    /* FOOTER */
+
+    footer {
+      background: #0c1b2f;
+      color: white;
+      text-align: center;
+      padding: 25px 20px;
+    }
+
+    footer p {
+      color: #cbd3dd;
+      margin-top: 7px;
+    }
+
+
+    /* MOBILE */
+
+    @media (max-width: 700px) {
+
+      header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+      }
+
+      nav {
+        gap: 20px;
+      }
+
+      .hero {
+        min-height: 480px;
+      }
+
+      .hero p {
+        font-size: 18px;
+      }
+
+      .services {
+        padding: 55px 20px;
+      }
+
+      .contact {
+        padding: 55px 20px;
+      }
+
+      .section-title,
+      .contact h2 {
+        font-size: 35px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header>
+
+<div class="logo">
+  Fidelis <span>Accounting & Tax Service</span>
+</div>
+
+<nav>
+  <a href="#services">Services</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+  </header>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+<div class="hero-content">
+
+  <h1>
+    Your Trusted <span>Partner</span><br>
+    in Tax Excellence.
+  </h1>
+
+  <p>
+    Your financial success is our mission.
+  </p>
+
+  <a href="#contact" class="hero-btn">
+    Contact Us Now
+  </a>
+
+</div>
+
+  </section>
+
+  <!-- SERVICES -->
+
+  <section class="services" id="services">
+
+<h2 class="section-title">
+  Our Services
+</h2>
+
+
+<div class="service-grid">
+
+
+  <div class="service-card">
+
+    <div class="service-icon">
+      📍
+    </div>
+
+    <h3>
+      Tax Registrations
+    </h3>
+
+  </div>
+
+
+  <div class="service-card">
+
+    <div class="service-icon">
+      📊
+    </div>
+
+    <h3>
+      Compliance & Returns
+    </h3>
+
+    <p>
+      ITR12, ITR14, VAT201
+    </p>
+
+  </div>
+
+
+  <div class="service-card">
+
+    <div class="service-icon">
+      💼
+    </div>
+
+    <h3>
+      SARS Audit Support
+    </h3>
+
+  </div>
+
+
+  <div class="service-card">
+
+    <div class="service-icon">
+      ⚓
+    </div>
+
+    <h3>
+      Excise & Customs
+    </h3>
+
+  </div>
+
+
+  <div class="service-card">
+
+    <div class="service-icon">
+      🏢
+    </div>
+
+    <h3>
+      CIPC Registrations
+    </h3>
+
+  </div>
+
+
+</div>
+
+  </section>
+
+  <!-- CONTACT -->
+
+  <section class="contact" id="contact">
+
+<h2>
+  Contact Us
+</h2>
+
+<p class="contact-intro">
+  Get in touch with our team directly.
+</p>
+
+
+<div class="contact-grid">
+
+
+  <!-- MR MAKENG -->
+
+  <div class="contact-card">
+
+    <h3>
+      Mr Makeng
+    </h3>
+
+    <p>
+      <a
+        href="tel:0724403655"
+        class="phone-number"
+        aria-label="Call Mr Makeng on 072 440 3655"
+      >
+        📞 072 440 3655
+      </a>
+    </p>
+
+  </div>
+
+
+  <!-- MR LEKGOTHANE -->
+
+  <div class="contact-card">
+
+    <h3>
+      Mr Lekgothane
+    </h3>
+
+    <p>
+      <a
+        href="tel:0813855750"
+        class="phone-number"
+        aria-label="Call Mr Lekgothane on 081 385 5750"
+      >
+        📞 081 385 5750
+      </a>
+    </p>
+
+  </div>
+
+
+</div>
+
+
+<!-- SINGLE WHATSAPP ICON -->
+
+<div class="whatsapp-area">
+
+  <button
+    class="whatsapp-button"
+    type="button"
+    onclick="openWhatsAppModal()"
+    aria-label="Choose a WhatsApp contact"
+    title="WhatsApp"
+  >
+
+    <svg
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982 1-3.648-.235-.374a9.86 9.86 0 01-1.511-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.002 5.45-4.437 9.884-9.886 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.479-8.413"/>
+    </svg>
+
+  </button>
+
+  <p class="whatsapp-label">
+    WhatsApp our team
+  </p>
+
+</div>
+
+
+<!-- WHATSAPP CONTACT SELECTOR -->
+
+<div
+  class="whatsapp-modal"
+  id="whatsappModal"
+  onclick="closeWhatsAppModal(event)"
+>
+
+  <div
+    class="whatsapp-modal-content"
+    onclick="event.stopPropagation()"
+  >
+
+    <button
+      class="close-modal"
+      type="button"
+      onclick="closeWhatsAppModal()"
+      aria-label="Close"
+    >
+      ×
+    </button>
+
+    <h3>
+      WhatsApp Our Team
+    </h3>
+
+    <p>
+      Choose who you would like to contact.
+    </p>
+
+    <a
+      href="https://wa.me/27724403655"
+      class="whatsapp-choice"
+      target="_blank"
+      rel="noopener"
+    >
+      WhatsApp Mr Makeng
+    </a>
+
+    <a
+      href="https://wa.me/27813855750"
+      class="whatsapp-choice"
+      target="_blank"
+      rel="noopener"
+    >
+      WhatsApp Mr Lekgothane
+    </a>
+
+  </div>
+
+</div>
+
+
+<!-- BUSINESS DETAILS -->
+
+<div class="business-details">
+
+  <div class="business-detail">
+
+    ✉️
+
+    <br><br>
+
+    <a href="mailto:info@fatsconsultants.co.za">
+      info@fatsconsultants.co.za
+    </a>
+
+    <br><br>
+
+    <a href="mailto:Thapelomakeng@fatsconsultants.co.za">
+      Thapelomakeng@fatsconsultants.co.za
+    </a>
+
+    <br><br>
+
+    <a href="mailto:NapeLekgothane@fatsconsultants.co.za">
+      NapeLekgothane@fatsconsultants.co.za
+    </a>
+
+  </div>
+
+  <div class="business-detail">
+
+    📍
+
+    <br><br>
+
+    Based in Kempton Park
+
+  </div>
+
+</div>
+
+
+<!-- WEBSITE -->
+
+<a
+  href="https://FatsConsultants.co.za"
+  target="_blank"
+  rel="noopener"
+  class="website-button"
+>
+  🌐 Visit FatsConsultants.co.za
+</a>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+<strong>
+  Fidelis Accounting & Tax Service
+</strong>
+
+<p>
+  Your financial success is our mission.
+</p>
+
+<p>
+  © 2026 Fidelis Accounting & Tax Service
+</p>
+
+  </footer>
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+
+    function openWhatsAppModal() {
+      document
+        .getElementById("whatsappModal")
+        .classList.add("active");
+
+      document.body.style.overflow = "hidden";
+    }
+
+
+    function closeWhatsAppModal(event) {
+
+      if (
+        !event ||
+        event.target === document.getElementById("whatsappModal")
+      ) {
+        document
+          .getElementById("whatsappModal")
+          .classList.remove("active");
+
+        document.body.style.overflow = "";
+      }
+
+    }
+
+
+    document.addEventListener("keydown", function(event) {
+
+      if (event.key === "Escape") {
+
+        document
+          .getElementById("whatsappModal")
+          .classList.remove("active");
+
+        document.body.style.overflow = "";
+
+      }
+
+    });
+
+  </script>
+
+</body>
+</html>
